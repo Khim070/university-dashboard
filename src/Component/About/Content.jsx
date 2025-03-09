@@ -7,17 +7,13 @@ import Innovation from "./Innovation/Innovation";
 import Bannertwo from "./BannerTwo/Bannertwo";
 import Strategic from "./Strategic/Strategic";
 import Faq from "./FAQ/Faq";
+import Language from "../Language";
 
 const Content = () => {
   return (
     <div class=" w-full page-wrapper overflow-hidden">
       <Header />
-      <Banner />
-      <Introduction />
-      <Innovation />
-      <Bannertwo />
-      <Strategic />
-      <Faq />
+      <Language />
     </div>
   );
 };

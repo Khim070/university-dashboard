@@ -51,7 +51,7 @@ const InnovationSection = () => {
   };
 
   return (
-    <section className="px-8 py-2">
+    <section className="px-4 py-2">
       <div className="border-2 rounded-lg overflow-x-scroll hide-scroll-bar">
         <div className="col-span-1 sm:col-span-3">
           <div>

@@ -45,19 +45,19 @@ const Banner = () => {
                         />
                       </div>
                     </div>
-
+                    <div className="flex flex-row">
                     <div className="flex-1">
                       <label className="block text-xl font-medium leading-6 text-white-900">
-                        Languages
+                        Display
                       </label>
                       <div className="mt-2">
-                        <select className="block w-full rounded-md border-0 py-2 pl-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-2xl sm:leading-6">
-                          <option value="">Languages</option>
-                          <option value="">English</option>
-                          <option value="">Khmer</option>
-                        </select>
+                        <label class="toggle-switch mt-2">
+                          <input type="checkbox" />
+                          <span class="slider"></span>
+                        </label>
                       </div>
                     </div>
+                  </div>
                   </div>
 
                   <div className="flex flex-row gap-4 px-4 py-2">
@@ -67,7 +67,7 @@ const Banner = () => {
                       </label>
 
                       <div className="mt-2">
-                        <textarea className="h-15 block w-full rounded-md border-0 py-2 pl-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-2xl sm:leading-6"></textarea>
+                        <textarea className="h-40 block w-full rounded-md border-0 py-2 pl-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-2xl sm:leading-6"></textarea>
                       </div>
                     </div>
 
@@ -109,20 +109,6 @@ const Banner = () => {
                             type="file"
                             class="hidden"
                           />
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-row gap-9 px-9 py-2">
-                    <div className="flex-1">
-                      <label className="block text-xl font-medium leading-6 text-white-900">
-                        Display
-                      </label>
-                      <div className="mt-2">
-                        <label class="toggle-switch mt-2">
-                          <input type="checkbox" />
-                          <span class="slider"></span>
                         </label>
                       </div>
                     </div>

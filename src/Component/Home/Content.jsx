@@ -7,17 +7,13 @@ import Academics from "./Academics/Academics";
 import Research from "./Research/Research";
 import Faculty from "./Faculty/Faculty";
 import EventsNews from "./EventsNews/EventsNews";
+import Language from "../Language";
 
 const Content = () => {
   return (
     <div class=" w-full page-wrapper overflow-hidden">
       <Header />
-      <Slider />
-      <Department />
-      <Academics />
-      <Research />
-      <Faculty />
-      <EventsNews />
+      <Language/>
     </div>
   );
 };
