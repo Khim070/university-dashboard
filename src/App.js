@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import Login from "./Page/Login";
 import Home from "./Page/Home";
 import About from "./Page/About";
+import Image from "./Page/Image";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />}></Route>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/image" element={<Image />} />
 
         <Route path="/login" element={<Login />} />
       </Routes>

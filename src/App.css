@@ -49,3 +49,10 @@
 .below-border{
     border-top: 2px solid #cccccc4a;
 }
+.btn-search{
+    height: 20px;
+    background-color: #155dfc;
+    width: 80px;
+    padding: 10px 12px;
+    border-radius: 5px;
+}

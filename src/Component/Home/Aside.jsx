@@ -51,7 +51,7 @@ const Aside = () => {
                             </li>
                             <li className="sidebar-item mb-2">
                                 <Link className={`sidebar-link gap-3 py-2 px-3 rounded-md w-full flex items-center
-                                    ${location.pathname === "/images" ? "bg-blue-600 text-white" : "hover:text-blue-600 hover:bg-blue-100"}`} to="/images">
+                                    ${location.pathname === "/image" ? "bg-blue-600 text-white" : "hover:text-blue-600 hover:bg-blue-100"}`} to="/image">
                                     <i className="ti ti-photo text-xl"></i> <span>Images</span>
                                 </Link>
                             </li>
