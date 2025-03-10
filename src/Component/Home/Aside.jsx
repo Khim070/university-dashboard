@@ -45,6 +45,13 @@ const Aside = () => {
                                     <i className="ti ti-phone text-xl"></i> <span>Contact Page</span>
                                 </Link>
                             </li>
+                            <li className="sidebar-item mb-2">
+                                <Link className={`sidebar-link gap-3 py-2 px-3 rounded-md w-full flex items-center
+                                    ${location.pathname === "/our-program" ? "bg-blue-600 text-white" : "hover:text-blue-600 hover:bg-blue-100"}`} to="/contact">
+                                    <i className="ti ti-book text-xl"></i> <span>Our Program Page</span>
+                                </Link>
+                            </li>
+
                             <li class="text-xs font-bold pb-4">
                                 <i class="ti ti-dots nav-small-cap-icon text-lg hidden text-center"></i>
                                 <span>Upload</span>
