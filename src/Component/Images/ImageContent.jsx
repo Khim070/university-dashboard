@@ -5,7 +5,7 @@ import ImageBody from './ImageBody'
 const ImageContent = () => {
   return (
     <div class=" w-full page-wrapper overflow-hidden">
-      <ImageHeader />
+      {/* <ImageHeader /> */}
       <ImageBody/>
     </div>
   )
