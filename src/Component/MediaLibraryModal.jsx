@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../Service/apiConfig';
 
 const MediaLibraryModal = ({ onSelect, onClose }) => {
-    const [images, setImages] = useState([
-        "/uploads/image1.jpg",
-        "/uploads/image2.jpg",
-        "/uploads/image3.jpg",
-        "/uploads/image4.jpg"
-    ]);
+    const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch images from the backend
-
+        fetch(`${API_ENDPOINTS.images}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 200 && data.data) {
+                    setImages(data.data);
+                }
+            })
+            .catch(error => console.error("Error fetching images:", error))
+            .finally(() => setLoading(false));
     }, []);
 
     return (
@@ -20,26 +24,32 @@ const MediaLibraryModal = ({ onSelect, onClose }) => {
 
                 <div className="flex justify-start py-2 items-center gap-2">
                     <div className="relative max-w-sm">
-                        <input className="w-60 px-4 h-8 rounded-md shadow-sm " type="search" placeholder="Search images"/>
+                        <input className="w-60 px-4 h-8 rounded-md shadow-sm" type="search" placeholder="Search images"/>
                     </div>
                     <div className="relative">
                         <a href="#" className="h-8 bg-blue-700 text-white px-1 rounded-md hover:bg-blue-700 flex items-center justify-center" aria-current="page">
-                            <i className="ti ti-search text-xl "></i>
+                            <i className="ti ti-search text-xl"></i>
                         </a>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
-                    {images.map((image, index) => (
-                        <div key={index} className="relative border rounded-lg overflow-hidden cursor-pointer"
-                            onClick={() => {
-                                onSelect(image);
-                                onClose(); // Close the modal after selection
-                            }}>
-                            <img src={image} alt={`Media ${index}`} className="w-full h-auto object-cover" />
-                        </div>
-                    ))}
-                </div>
+                {loading ? (
+                    <p className="text-center py-4">Loading images...</p>
+                ) : (
+                    <div className="grid grid-cols-4 gap-4">
+                        {images.map((image) => (
+                            <div key={image.imageId} className="relative border rounded-lg overflow-hidden cursor-pointer"
+                                onClick={() => {
+                                    onSelect(image.image);
+                                    onClose();
+                                }}>
+                                <img src={`${image.image_url}`}
+                                     alt={`Media ${image.name}`}
+                                     className="w-full h-auto object-cover" />
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg" onClick={onClose}>
                     Close

@@ -33,7 +33,6 @@ const ImageHeader = ({ onSearch }) => {
             </div>
             <div className="relative ">
               <button
-                // className="btn-search h-40 py-2.5 font-medium text-lg hover:bg-blue-700"
                 className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700"
                 onClick={() => onSearch(searchQuery)}
               >

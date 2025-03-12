@@ -57,9 +57,11 @@ const Slider = () => {
   };
 
   const handleImageSelect = (imageUrl) => {
-        setSelectedImage(imageUrl);
-        setMediaLibraryOpen(false);
-    };
+      setSelectedImage(imageUrl);
+      setMediaLibraryOpen(false);
+  };
+
+
 
 
   return (
@@ -249,7 +251,7 @@ const Slider = () => {
                                         <div class="flex items-center justify-center w-full mt-2 border-1">
                                           <label
                                             onClick={openMediaLibrary}
-                                            for="dropzone-file"
+                                            // for="dropzone-file"
                                             class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
                                           >
                                             {selectedImage ? (
