@@ -5,7 +5,7 @@ import ImageHeader from './imageHeader';
 
 const ImageBody = () => {
     const [images, setImages] = useState([]);
-    const [filteredImages, setFilteredImages] = useState([]); // State for filtered images
+    const [filteredImages, setFilteredImages] = useState([]);
     const [selectedImageName, setSelectedImageName] = useState("");
 
     // Fetch Images from API
@@ -14,17 +14,17 @@ const ImageBody = () => {
             try {
                 const response = await axios.get(API_ENDPOINTS.images);
                 if (response.data && response.data.data) {
-                    setImages(response.data.data); // images
-                    setFilteredImages(response.data.data); // Initialize filtered images
+                    setImages(response.data.data);
+                    setFilteredImages(response.data.data);
                 } else {
                     console.error("API did not return expected data structure:", response.data);
                     setImages([]);
-                    setFilteredImages([]); // Reset filtered images
+                    setFilteredImages([]);
                 }
             } catch (error) {
                 console.error("Error fetching images:", error);
-                setImages([]); // array
-                setFilteredImages([]); // Reset filtered images
+                setImages([]);
+                setFilteredImages([]);
             }
         };
 
@@ -63,7 +63,7 @@ const ImageBody = () => {
                 const updatedImages = await axios.get(API_ENDPOINTS.images);
                 if (updatedImages.data && updatedImages.data.data) {
                     setImages(updatedImages.data.data);
-                    setFilteredImages(updatedImages.data.data); // Update filtered images
+                    setFilteredImages(updatedImages.data.data);
                 }
             } else {
                 console.error("Upload failed:", response.data);

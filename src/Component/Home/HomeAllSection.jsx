@@ -6,17 +6,17 @@ import Research from "./Research/Research";
 import Faculty from "./Faculty/Faculty";
 import EventsNews from "./EventsNews/EventsNews";
 
-const HomeAllSection = () => {
+const HomeAllSection = ({ content }) => {
   return (
     <>
-        <Slider />
-        <Department />
-        <Academics />
+        <Slider content={content.sliders} />
+        <Department content={content.departments} />
+        <Academics content={content.academics} />
         <Research />
         <Faculty />
         <EventsNews />
     </>
-  )
-}
+  );
+};
 
-export default HomeAllSection
+export default HomeAllSection;

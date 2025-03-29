@@ -2,23 +2,27 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./output.css";
 import { Navigate } from "react-router-dom";
+import { LanguageProvider } from "./Context/LanguageContext";
 import Login from "./Page/Login";
 import Home from "./Page/Home";
 import About from "./Page/About";
 import Image from "./Page/Image";
 
+
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />}></Route>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/image" element={<Image />} />
+    <LanguageProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />}></Route>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/image" element={<Image />} />
 
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </LanguageProvider>
   );
 }
 

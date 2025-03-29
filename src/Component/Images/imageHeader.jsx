@@ -31,14 +31,6 @@ const ImageHeader = ({ onSearch }) => {
                 onChange={handleSearch}
               />
             </div>
-            <div className="relative ">
-              <button
-                className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700"
-                onClick={() => onSearch(searchQuery)}
-              >
-                <i className="ti ti-search text-xl text-white"></i>
-              </button>
-            </div>
           </li>
         </ul>
         <div className="flex items-center gap-4">

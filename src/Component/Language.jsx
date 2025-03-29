@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import EnglishContent from './EnglishContent';
 import KhmerContent from './KhmerContent';
+import { LanguageContext } from '../Context/LanguageContext';
 
 const Language = () => {
-    const [activeTab, setActiveTab] = useState('english');
+    const { selectedLanguage, setSelectedLanguage, content } = useContext(LanguageContext);
 
     return (
         <section>
@@ -12,12 +13,12 @@ const Language = () => {
                     <li className="me-2" role="presentation">
                         <button
                             className={`inline-block px-4 py-2 border-b-2 rounded-t-lg text-lg ${
-                                activeTab === 'english' ? 'bg-blue-600 text-white' : 'border-transparent text-gray-800'
+                                selectedLanguage === 'english' ? 'bg-blue-600 text-white' : 'border-transparent text-gray-800'
                             }`}
                             id="english-tab"
                             type="button"
                             role="tab"
-                            onClick={() => setActiveTab('english')}
+                            onClick={() => setSelectedLanguage('english')}
                         >
                             English
                         </button>
@@ -25,12 +26,12 @@ const Language = () => {
                     <li className="me-2" role="presentation">
                         <button
                             className={`inline-block px-4 py-2 border-b-2 rounded-t-lg text-lg ${
-                                activeTab === 'khmer' ? 'bg-blue-600 text-white' : 'border-transparent text-gray-800'
+                                selectedLanguage === 'khmer' ? 'bg-blue-600 text-white' : 'border-transparent text-gray-800'
                             }`}
                             id="khmer-tab"
                             type="button"
                             role="tab"
-                            onClick={() => setActiveTab('khmer')}
+                            onClick={() => setSelectedLanguage('khmer')}
                         >
                             Khmer
                         </button>
@@ -38,8 +39,8 @@ const Language = () => {
                 </ul>
             </div>
             <div id="default-tab-content" className="">
-                {activeTab === 'english' && <EnglishContent/>}
-                {activeTab === 'khmer' && <KhmerContent/>}
+                {selectedLanguage === 'english' && <EnglishContent content={content.english} />}
+                {selectedLanguage === 'khmer' && <KhmerContent content={content.khmer} />}
             </div>
         </section>
     );
